@@ -64,14 +64,16 @@ A large problem in properly identifying credit risk is that there is an unbalanc
 
 - Results: 
 
-  - Accuracy Score:
+  - The accuracy score is highest at about 68% using the SMOTEEN technique. 
   
     <img src="images/SMOTEEN_combosampling_score.PNG" height="45">
   
-  - Confusion Matrix:
+  - Compared to the cluster centroid undersampling technique, the model has improved at properly identifying "low risk" loans. 
   
     <img src="images/SMOTEEN_combosampling_cm.PNG" height="100">
     
-  - Classification Report:
+  - The precision of both the majority and minority class has remained the same for each of the sampling techniques. This indicates that the reliability of a positive classification for a "high risk" loan is low, while the positive classification of a "low risk" loan is high when predicted by the model. 
+  
+    Looking at the recall scores, there is a 59% likelihood that of the loans that are actually "low risk" are correctly identified. Also, of the actual "high risk" loans, there is a 77% likelihood that the loan will be properly classified. 
   
     <img src="images/SMOTEEN_combosampling_report.PNG" height="110">

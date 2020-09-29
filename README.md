@@ -17,7 +17,7 @@ A large problem in properly identifying credit risk is that there is an unbalanc
     
     <img src="images/random_oversampling_cm.PNG" height="100">
 
-  - The classification report demonstrates the discrepancies between the model predicting a "low risk" versus "high risk" loan status. Looking at the "low risk", the model has a high precision (pre) and low recall (rec). This means that the model is reliable for classifying "low risk" loan statuses. However, there is a large number of loans that are being classified as "high risk" but are actually "low risk", as seen in the confusion matrix. 
+  - The classification report demonstrates the discrepancies between the model predicting a "low risk" versus "high risk" loan status. Looking at the "low risk", the model has high precision (pre) and low recall (rec). This means that of the loans predicted to be "low risk", the model is reliable for classifying "low risk" loan statuses. However, there is a large number of loans that are being classified as "high risk" but are actually "low risk", as seen in the confusion matrix. 
   
     Now analyzing the "high risk" loan statuses, there is a higher recall but very poor precision. Of the loans that are actually "high risk", there is a 74% likelihood that the model will correctly predict that it is "high risk". However, out of the outcomes where the model predicts that the loan is "high risk", there is an extremely low probability that the laon is actually "high risk". 
     
@@ -47,15 +47,15 @@ A large problem in properly identifying credit risk is that there is an unbalanc
 
 - Results: 
 
-  - Accuracy Score:
+  - The accuracy score for the cluster centroid undersampling technique is low at 55% approximately. 
   
     <img src="images/cc_undersampling_score.PNG" height="45">
   
-  - Confusion Matrix:
+  - Again, the confusion matrix demonstrates that of the loans being classified as "high risk", the majority are actually "low risk". Contrary, the "low risk" loans are correctly being identified when properly predicted.
   
     <img src="images/cc_undersampling_cm.PNG" height="100">
     
-  - Classification Report:
+  - The recall of the majority "low risk" class is the lowest compared to the previous models. This is illustrated by the confusion matrix; the majority of the outcomes have been incorrectly predicted as "high risk".
   
     <img src="images/cc_undersampling_report.PNG" height="110">
 

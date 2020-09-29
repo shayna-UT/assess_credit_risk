@@ -12,7 +12,7 @@ Build and evaluate several machine learning models to assess credit risk
     
     <img src="images/random_oversampling_score.PNG" height="45">
 
-  - The confusion matrix is displayed below. From the confusion matrix, it can be seen that out of the loan statuses prediced to fall within "high risk" (condition positive), most of them were predicted incorrectly (predicted condition negative).  
+  - The confusion matrix is displayed below. From the confusion matrix, it can be seen that out of the loan statuses prediced to fall within "high risk", most of them were predicted incorrectly.  
     
     <img src="images/random_oversampling_cm.PNG" height="100">
 
@@ -23,7 +23,22 @@ Build and evaluate several machine learning models to assess credit risk
     <img src="images/random_oversampling_report.PNG" height="110">
 
 ### SMOTE: Synthetic Minority Oversampling Technique
+- In SMOTE, new instances are interpolated. For an instance from the minority class, a number of its closest neighbors is chosen. Based on the values of these neighbors, new values are created. 
 
+- Results: 
+
+  - The accuracy score of the Logistic Regression model using the SMOTE oversampling technique yielded a slightly lower value of about 65%.
+  
+    <img src="images/SMOTE_oversampling_score.PNG" height="45">
+  
+  - The confusion matrix is displayed below:
+  
+    <img src="images/SMOTE_oversampling_cm.PNG" height="100">
+  
+  - The recall for the majority class ("low risk") has increased compared to using random oversampling. However, it has decreased for the minority class ("high risk"). The precision has remained the same for both the majority and minority classes. 
+  
+    <img src="images/SMOTE_oversampling_report.PNG" height="110">
+  
 ### Cluster Centroid Undersampling
 
 ### Combination Sampling With SMOTEENN

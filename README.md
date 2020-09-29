@@ -37,6 +37,8 @@ Build and evaluate several machine learning models to assess credit risk
   
   - The recall for the majority class ("low risk") has increased compared to using random oversampling. However, it has decreased for the minority class ("high risk"). The precision has remained the same for both the majority and minority classes. 
   
+    The tradeoff is that of the loans that are actually "low risk", more are being correctly classified. On the other hand, more of the "high risk" loans are now incorrectly being identified as "low risk". 
+  
     <img src="images/SMOTE_oversampling_report.PNG" height="110">
   
 ### Cluster Centroid Undersampling

@@ -2,6 +2,7 @@
 Build and evaluate several machine learning models to assess credit risk
 
 ### Summary
+A large problem in properly identifying credit risk is that there is an unbalanced classification problem; the number of good "low risk" loans outnumbers the number of risky "high risk" loans. Therefore, the following sampling techniques have been performed on the dataset to train and evaluate machine learning models with unbalanced classes. 
 
 ### Random Oversampling
 - Through random oversampling, instances of the minority class are randomly selected and added to the training set until the majority and minority classes are balanced.
@@ -42,5 +43,35 @@ Build and evaluate several machine learning models to assess credit risk
     <img src="images/SMOTE_oversampling_report.PNG" height="110">
   
 ### Cluster Centroid Undersampling
+- In cluster centroid undersampling, the algorithm identifies clusters of the majority class, then generates synthetic data points, called centroids, that are representative of the clusters. The majority class is then undersampled down to the size of the minority class. 
+
+- Results: 
+
+  - Accuracy Score:
+  
+    <img src="images/cc_undersampling_score.PNG" height="45">
+  
+  - Confusion Matrix:
+  
+    <img src="images/cc_undersampling_cm.PNG" height="100">
+    
+  - Classification Report:
+  
+    <img src="images/cc_undersampling_report.PNG" height="110">
 
 ### Combination Sampling With SMOTEENN
+- SMOTEEN combines the SMOTE and ENN (Edited Nearest Neighbors) algorithms by following a two-step process. First, the minority class is oversampled with SMOTE. Then, the resulting data is cleaned with an undersampling strategy. If the two nearest neighbors of a data point belong to two different classes, that point is dropped. 
+
+- Results: 
+
+  - Accuracy Score:
+  
+    <img src="images/SMOTEEN_combosampling_score.PNG" height="45">
+  
+  - Confusion Matrix:
+  
+    <img src="images/SMOTEEN_combosampling_cm.PNG" height="100">
+    
+  - Classification Report:
+  
+    <img src="images/SMOTEEN_combosampling_report.PNG" height="110">

@@ -1,6 +1,8 @@
 # assess_credit_risk
 Build and evaluate several machine learning models to assess credit risk
 
+---
+### Use the imbalanced-learn library to resample the data and build and evaluate logistic regression classifiers using the resampled data:
 ### Summary
 A large problem in properly identifying credit risk is that there is an unbalanced classification problem; the number of good "low risk" loans outnumbers the number of risky "high risk" loans. Therefore, the following sampling techniques have been performed on the dataset to train and evaluate machine learning models with unbalanced classes. 
 
@@ -81,3 +83,33 @@ A large problem in properly identifying credit risk is that there is an unbalanc
 ### Conclusion
 
 Overall, the machine learning models tested would not be recommended. The main goal of the machine learning model would be to properly identify which "high risk" loans. While the recall score of the SMOTEENN technique was the best compared to the other models, the precision is too low at 0.01. The tradeoff between the recall and the precision for the minority class is too great. Although of the actual "high risk" loans, most are being predicted correctly, too many "low risk" loans are being misclassified as "high risk".
+
+---
+### Train and compare two different ensemble classifiers to predict loan risk:
+### BalancedRandomForestClassifier
+- A balanced random forest randomly under-samples each boostrap sample to balance it. 
+
+  (https://imbalanced-learn.readthedocs.io/en/stable/generated/imblearn.ensemble.BalancedRandomForestClassifier.html)
+
+- Results:
+
+  - The BalancedRandomForestClassifier produced an accuracy score of almost 80%. The accuracy of the model is also backed up by its high F1 score for the "low risk" loans. The F1 score, also known as the harmonic mean of the precision and recall, indicates the accuracy of the model. If the model produces a low F1 score, then there is a pronounced imbalance between the precision and recall of the model. In this case, the precision of the model for "low risk" loans is 1.00 and the recall is 0.87. The high precision indicates that if a loan is determined to be "low risk", then there is a very high likelihood that loan will be "low risk". Looking at the confusion matrix, the model predicted a "low risk" loan correctly 14,958 out of 14,988 times. The recall, 0.87, represents that of the 17,104 "low risk" loans, 14,958 of them were predicted correctly. 
+  
+    However, the F1 score for the "high risk" loans is low yet again, demonstrating the imbalance between the precision and recall of the model. The low precision means that of the loans that were predicted to be "high risk", the majority were actually "low risk". On the other hand, 70% of the actual "high risk" loans were correctly predicted to be "high risk".
+    
+    <img src="images/BalancedRandomForestClassifier.PNG" height="225">
+
+### EasyEnsembleClassifier
+- The classifier is an ensemble of AdaBoost learners trained on different balanced boostrap samples. The balancing is achieved by random under-sampling.
+
+  (https://imbalanced-learn.readthedocs.io/en/stable/generated/imblearn.ensemble.EasyEnsembleClassifier.html)
+
+- Results:
+
+  - The EasyEnsembleClassifier resulted in the highest accuracy score of all of the models at about 93%. This is verified by the increase in both precision and recall for both the "low risk" and "high risk" loans.  
+    
+    <img src="images/EasyEnsembleClassifier.PNG" height="225">
+
+### Conclusion
+Both of the ensemble learners tested outperformed the above sampling techniques. The concept of ensemble learning is the process of combining multiple models, like decision tree algorithms, to help improve the accuracy and robustness, as well as decrease variance of the model, and therefore increase the overall performance of the model. The increased model performance can be observed by looking at the accuracy score, confusion matrix, and classification report of each model. 
+

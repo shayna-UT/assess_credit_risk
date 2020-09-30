@@ -113,3 +113,7 @@ Overall, the machine learning models tested would not be recommended. The main g
 ### Conclusion
 Both of the ensemble learners tested outperformed the above sampling techniques. The concept of ensemble learning is the process of combining multiple models, like decision tree algorithms, to help improve the accuracy and robustness, as well as decrease variance of the model, and therefore increase the overall performance of the model. The increased model performance can be observed by looking at the accuracy score, confusion matrix, and classification report of each model. 
 
+Although the EasyEnsembleClassifier has a high accuracy score and has outperformed the other models, additional modifications still need to be made. The 9% precision level for predicting "high risk" loans is very low. The goal of the model is to predict "high risk" loans. Therefore, there needs to be additional emphasis on increasing the precision. One way of looking at the precision is to ask the question, "Of the loans that were predicted to be high risk, what is the chance that it is actually high risk?". At this time, the chance of it actually being high risk is very low and the overall goal of the model is not being properly executed. 
+
+In order to improve the EasyEnsembleClassifier, the features can be sorted by their importance, and then drop the lower features from the model. 
+
